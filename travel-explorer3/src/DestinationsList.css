@@ -1,0 +1,42 @@
+.destinations-list-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.load-button {
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.load-button:hover {
+  background: #005f8a;
+}
+
+.load-button:disabled {
+  background: #bbb;
+}
+
+.destinations-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+.no-data {
+  color: #555;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+#root {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  height: 100px;
+  margin: 20px 0;
+}
+
+.card {
+  padding: 20px;
+  margin: 10px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.read-the-docs {
+  color: #666;
+  font-size: 14px;
+}

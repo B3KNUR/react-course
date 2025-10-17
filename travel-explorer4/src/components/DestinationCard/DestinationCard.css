@@ -1,0 +1,31 @@
+.destination-card {
+  background: #f7f8fa; 
+  border: 1px solid #e3e6e8;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.flag-img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background: #f0f0f0;
+  padding: 6px;
+}
+
+.destination-card h3 {
+  color: #0077b6;
+  margin: 6px 0 8px;
+  font-size: 1.05rem;
+}
+
+.destination-card p {
+  color: #444;
+  font-size: 0.95rem;
+  margin: 3px 0;
+}

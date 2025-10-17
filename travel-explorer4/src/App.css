@@ -1,0 +1,54 @@
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 10px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+h1 {
+  color: #0079b2;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.about,
+.explore,
+.contact {
+  background: #fff;
+  padding: 13px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  text-align: left;
+}
+
+h2 {
+  color: #0079b2;
+  font-size: 1.25rem;
+  margin-bottom: 7px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 4px 0;
+}
+
+.footer {
+  background: #0079b2;
+  color: #fff;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 25px;
+  font-size: 0.9rem;
+}

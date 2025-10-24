@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import DestinationCard from '../DestinationCard/DestinationCard'
 import './DestinationsList.css'
 
@@ -7,22 +7,32 @@ function DestinationsList() {
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
 
-  function loadCountries() {
-    setLoading(true)
-    fetch('https://restcountries.com/v3.1/all?fields=name,capital,population,flags')
-      .then(res => res.json())
-      .then(data => {
-        const small = data.slice(0, 10).map(c => ({
-          name: c.name.common,
-          capital: c.capital ? c.capital[0] : 'No capital',
-          population: c.population,
-          flag: c.flags.png
-        }))
-        setCountries(small)
-      })
-      .catch(err => console.log(err))
-      .finally(() => setLoading(false))
+  function getRandomCountries(all) {
+    return all.sort(() => Math.random() - 0.5).slice(0, 10).map(c => ({
+      name: c.name.common,
+      capital: c.capital ? c.capital[0] : 'No capital',
+      population: c.population,
+      flag: c.flags.png
+    }))
   }
+
+  async function loadCountries() {
+    try {
+      setLoading(true)
+      const res = await fetch('https://restcountries.com/v3.1/all?fields=name,capital,population,flags')
+      const data = await res.json()
+      const randomTen = getRandomCountries(data)
+      setCountries(randomTen)
+    } catch (err) {
+      console.log('Error loading countries:', err)
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    loadCountries()
+  }, [])
 
   const filtered = countries.filter(c =>
     c.name.toLowerCase().includes(search.toLowerCase())
@@ -32,7 +42,7 @@ function DestinationsList() {
     <div className="dest-list">
       <div className="buttons">
         <button onClick={loadCountries} disabled={loading}>
-          {loading ? 'Loading...' : 'Load countries'}
+          {loading ? 'Loading...' : 'Reload random countries'}
         </button>
 
         {countries.length > 0 && (
@@ -57,7 +67,7 @@ function DestinationsList() {
           ))}
         </ul>
       ) : (
-        !loading && <p>{search ? 'Nothing found' : 'Click load to see countries'}</p>
+        !loading && <p>{search ? 'Nothing found' : 'No countries loaded'}</p>
       )}
     </div>
   )

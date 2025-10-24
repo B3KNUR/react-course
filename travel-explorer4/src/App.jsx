@@ -11,7 +11,7 @@ function App() {
         <h2>About us</h2>
         <p>
           Welcome to Travel Explorer! Here you can check out countries and learn 
-          something interesting about them. This is a simple app for study purposes.
+          something interesting about them.
         </p>
       </section>
 
